@@ -41,31 +41,22 @@ class LinkedList:
     def reverse_list(self, node, prev):
         if node is None:
             return None
-        elif node.get_next() is None:
-            return node.value
-        else:
+        # elif node.get_next() is None:
+        #     return node.value
+        else:   #reformatted to decrease run tme
             curr_node = node
-            arr = []
+
             while curr_node:
-                arr.append(curr_node)
+                self.add_to_head(curr_node.value)
                 curr_node = curr_node.get_next()
-            while len(arr) != 0:
-                new_node = arr.pop(0)
-                self.add_to_head(new_node.value)
-            
 
         # else:
-        #     prev = None
-        #     curr = node
-        #     next = node.get_next()
-
-        #     while next:
-        #         curr.set_next(prev)
-        #         next.set_next(curr)
-        #         prev = curr
-        #         curr = next
-        #         next = curr.get_next()
-        #         if next is None:
-        #             self.head = curr
-        #         return self
-       
+        #     curr_node = node
+        #     arr = []
+        #     while curr_node:
+        #         arr.append(curr_node)
+        #         curr_node = curr_node.get_next()
+        #     while len(arr) != 0:
+        #         new_node = arr.pop(0)
+        #         self.add_to_head(new_node.value)
+            
